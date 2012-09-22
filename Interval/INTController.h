@@ -6,9 +6,13 @@
 //  Copyright (c) 2012 Ichi Kanaya. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import <Foundation/Foundation.h>
 
-@interface INTController: NSObject
+@interface INTController: NSObject {
+    CALayer *backgroundLayer;
+    CALayer *imageLayer;
+}
 
 @property (assign) IBOutlet NSView *view;
 

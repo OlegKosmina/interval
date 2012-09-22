@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Ichi Kanaya. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import <QTKit/QTKit.h>
 #import "INTController.h"
 
@@ -14,7 +13,6 @@
 
 - (void)awakeFromNib {
     // background layer
-    CALayer *backgroundLayer;
     CGColorRef blackColor;
     backgroundLayer = [CALayer layer];
     blackColor = CGColorCreateGenericGray(0, 1.0f);
@@ -22,7 +20,6 @@
     CGColorRelease(blackColor);
     
     // image layers
-    CALayer *imageLayer;
     imageLayer = [CALayer layer];
     
     NSBitmapImageRep *bitmapImage = [NSBitmapImageRep imageRepWithContentsOfFile: @"/Users/kanaya/Pictures/picture1.jpg"];
@@ -47,6 +44,11 @@
 
 - (IBAction)sensor1TunrnedOn: (id)sender {
     NSLog(@"Sensor 1.");
+
+    // CALayer *layer = [[[_view layer] sublayers] objectAtIndex: 1];
+    CALayer *layer = imageLayer;
+    [backgroundLayer addSublayer: layer];
+    layer.opacity = 0.5;
 }
 
 @end
