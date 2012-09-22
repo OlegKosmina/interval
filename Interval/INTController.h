@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface INTController : NSObject
+@interface INTController: NSObject
+
+@property (assign) IBOutlet NSView *view;
 
 @end

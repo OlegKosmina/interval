@@ -1,0 +1,435 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='1.0'>
+<depends_on path='/System/Library/Frameworks/OpenGL.framework'/>
+<depends_on path='/System/Library/Frameworks/IOKit.framework'/>
+<depends_on path='/System/Library/Frameworks/Foundation.framework'/>
+<depends_on path='/System/Library/Frameworks/ApplicationServices.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreVideo.framework'/>
+<depends_on path='/System/Library/Frameworks/IOSurface.framework'/>
+<depends_on path='/System/Library/Frameworks/Accelerate.framework'/>
+<depends_on path='/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/CoreImage.framework'/>
+<depends_on path='/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/ScalableUserInterface.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreText.framework'/>
+<depends_on path='/System/Library/Frameworks/CoreFoundation.framework'/>
+<depends_on path='/System/Library/Frameworks/ImageIO.framework'/>
+<struct type64='{CATransform3D=&quot;m11&quot;d&quot;m12&quot;d&quot;m13&quot;d&quot;m14&quot;d&quot;m21&quot;d&quot;m22&quot;d&quot;m23&quot;d&quot;m24&quot;d&quot;m31&quot;d&quot;m32&quot;d&quot;m33&quot;d&quot;m34&quot;d&quot;m41&quot;d&quot;m42&quot;d&quot;m43&quot;d&quot;m44&quot;d}' type='{CATransform3D=&quot;m11&quot;f&quot;m12&quot;f&quot;m13&quot;f&quot;m14&quot;f&quot;m21&quot;f&quot;m22&quot;f&quot;m23&quot;f&quot;m24&quot;f&quot;m31&quot;f&quot;m32&quot;f&quot;m33&quot;f&quot;m34&quot;f&quot;m41&quot;f&quot;m42&quot;f&quot;m43&quot;f&quot;m44&quot;f}' name='CATransform3D'/>
+<constant type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}' name='CATransform3DIdentity'/>
+<constant type='@' name='kCAAlignmentCenter'/>
+<constant type='@' name='kCAAlignmentJustified'/>
+<constant type='@' name='kCAAlignmentLeft'/>
+<constant type='@' name='kCAAlignmentNatural'/>
+<constant type='@' name='kCAAlignmentRight'/>
+<constant type='@' name='kCAAnimationCubic'/>
+<constant type='@' name='kCAAnimationCubicPaced'/>
+<constant type='@' name='kCAAnimationDiscrete'/>
+<constant type='@' name='kCAAnimationLinear'/>
+<constant type='@' name='kCAAnimationPaced'/>
+<constant type='@' name='kCAAnimationRotateAuto'/>
+<constant type='@' name='kCAAnimationRotateAutoReverse'/>
+<constant type='@' name='kCAEmitterLayerAdditive'/>
+<constant type='@' name='kCAEmitterLayerBackToFront'/>
+<constant type='@' name='kCAEmitterLayerCircle'/>
+<constant type='@' name='kCAEmitterLayerCuboid'/>
+<constant type='@' name='kCAEmitterLayerLine'/>
+<constant type='@' name='kCAEmitterLayerOldestFirst'/>
+<constant type='@' name='kCAEmitterLayerOldestLast'/>
+<constant type='@' name='kCAEmitterLayerOutline'/>
+<constant type='@' name='kCAEmitterLayerPoint'/>
+<constant type='@' name='kCAEmitterLayerPoints'/>
+<constant type='@' name='kCAEmitterLayerRectangle'/>
+<constant type='@' name='kCAEmitterLayerSphere'/>
+<constant type='@' name='kCAEmitterLayerSurface'/>
+<constant type='@' name='kCAEmitterLayerUnordered'/>
+<constant type='@' name='kCAEmitterLayerVolume'/>
+<constant type='@' name='kCAFillModeBackwards'/>
+<constant type='@' name='kCAFillModeBoth'/>
+<constant type='@' name='kCAFillModeForwards'/>
+<constant type='@' name='kCAFillModeFrozen'/>
+<constant type='@' name='kCAFillModeRemoved'/>
+<constant type='@' name='kCAFillRuleEvenOdd'/>
+<constant type='@' name='kCAFillRuleNonZero'/>
+<constant type='@' name='kCAFilterLinear'/>
+<constant type='@' name='kCAFilterNearest'/>
+<constant type='@' name='kCAFilterTrilinear'/>
+<constant type='@' name='kCAGradientLayerAxial'/>
+<constant type='@' name='kCAGravityBottom'/>
+<constant type='@' name='kCAGravityBottomLeft'/>
+<constant type='@' name='kCAGravityBottomRight'/>
+<constant type='@' name='kCAGravityCenter'/>
+<constant type='@' name='kCAGravityLeft'/>
+<constant type='@' name='kCAGravityResize'/>
+<constant type='@' name='kCAGravityResizeAspect'/>
+<constant type='@' name='kCAGravityResizeAspectFill'/>
+<constant type='@' name='kCAGravityRight'/>
+<constant type='@' name='kCAGravityTop'/>
+<constant type='@' name='kCAGravityTopLeft'/>
+<constant type='@' name='kCAGravityTopRight'/>
+<constant type='@' name='kCALineCapButt'/>
+<constant type='@' name='kCALineCapRound'/>
+<constant type='@' name='kCALineCapSquare'/>
+<constant type='@' name='kCALineJoinBevel'/>
+<constant type='@' name='kCALineJoinMiter'/>
+<constant type='@' name='kCALineJoinRound'/>
+<constant type='@' name='kCAMediaTimingFunctionDefault'/>
+<constant type='@' name='kCAMediaTimingFunctionEaseIn'/>
+<constant type='@' name='kCAMediaTimingFunctionEaseInEaseOut'/>
+<constant type='@' name='kCAMediaTimingFunctionEaseOut'/>
+<constant type='@' name='kCAMediaTimingFunctionLinear'/>
+<constant type='@' name='kCAOnOrderIn'/>
+<constant type='@' name='kCAOnOrderOut'/>
+<constant type='@' name='kCAScrollBoth'/>
+<constant type='@' name='kCAScrollHorizontally'/>
+<constant type='@' name='kCAScrollNone'/>
+<constant type='@' name='kCAScrollVertically'/>
+<constant type='@' name='kCATransactionAnimationDuration'/>
+<constant type='@' name='kCATransactionAnimationTimingFunction'/>
+<constant type='@' name='kCATransactionCompletionBlock'/>
+<constant type='@' name='kCATransactionDisableActions'/>
+<constant type='@' name='kCATransition'/>
+<constant type='@' name='kCATransitionFade'/>
+<constant type='@' name='kCATransitionFromBottom'/>
+<constant type='@' name='kCATransitionFromLeft'/>
+<constant type='@' name='kCATransitionFromRight'/>
+<constant type='@' name='kCATransitionFromTop'/>
+<constant type='@' name='kCATransitionMoveIn'/>
+<constant type='@' name='kCATransitionPush'/>
+<constant type='@' name='kCATransitionReveal'/>
+<constant type='@' name='kCATruncationEnd'/>
+<constant type='@' name='kCATruncationMiddle'/>
+<constant type='@' name='kCATruncationNone'/>
+<constant type='@' name='kCATruncationStart'/>
+<constant type='@' name='kCAValueFunctionRotateX'/>
+<constant type='@' name='kCAValueFunctionRotateY'/>
+<constant type='@' name='kCAValueFunctionRotateZ'/>
+<constant type='@' name='kCAValueFunctionScale'/>
+<constant type='@' name='kCAValueFunctionScaleX'/>
+<constant type='@' name='kCAValueFunctionScaleY'/>
+<constant type='@' name='kCAValueFunctionScaleZ'/>
+<constant type='@' name='kCAValueFunctionTranslate'/>
+<constant type='@' name='kCAValueFunctionTranslateX'/>
+<constant type='@' name='kCAValueFunctionTranslateY'/>
+<constant type='@' name='kCAValueFunctionTranslateZ'/>
+<enum value='1' name='CA_WARN_DEPRECATED'/>
+<enum value='7' name='kCAConstraintHeight'/>
+<enum value='2' name='kCAConstraintMaxX'/>
+<enum value='6' name='kCAConstraintMaxY'/>
+<enum value='1' name='kCAConstraintMidX'/>
+<enum value='5' name='kCAConstraintMidY'/>
+<enum value='0' name='kCAConstraintMinX'/>
+<enum value='4' name='kCAConstraintMinY'/>
+<enum value='3' name='kCAConstraintWidth'/>
+<enum value='4' name='kCALayerBottomEdge'/>
+<enum value='16' name='kCALayerHeightSizable'/>
+<enum value='1' name='kCALayerLeftEdge'/>
+<enum value='4' name='kCALayerMaxXMargin'/>
+<enum value='32' name='kCALayerMaxYMargin'/>
+<enum value='1' name='kCALayerMinXMargin'/>
+<enum value='8' name='kCALayerMinYMargin'/>
+<enum value='0' name='kCALayerNotSizable'/>
+<enum value='2' name='kCALayerRightEdge'/>
+<enum value='8' name='kCALayerTopEdge'/>
+<enum value='2' name='kCALayerWidthSizable'/>
+<function name='CACurrentMediaTime'>
+<retval type='d'/>
+</function>
+<function name='CATransform3DConcat'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DEqualToTransform'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type='B'/>
+</function>
+<function name='CATransform3DGetAffineTransform'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
+</function>
+<function name='CATransform3DInvert'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DIsAffine'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type='B'/>
+</function>
+<function name='CATransform3DIsIdentity'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<retval type='B'/>
+</function>
+<function name='CATransform3DMakeAffineTransform'>
+<arg type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DMakeRotation'>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DMakeScale'>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DMakeTranslation'>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DRotate'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DScale'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<function name='CATransform3DTranslate'>
+<arg type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<arg type64='d' type='f'/>
+<retval type64='{CATransform3D=dddddddddddddddd}' type='{CATransform3D=ffffffffffffffff}'/>
+</function>
+<class name='CAAnimation'>
+<method selector='isRemovedOnCompletion'>
+<retval type='B'/>
+</method>
+<method selector='setRemovedOnCompletion:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='shouldArchiveValueForKey:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='CAEmitterCell'>
+<method selector='isEnabled'>
+<retval type='B'/>
+</method>
+<method selector='setEnabled:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='shouldArchiveValueForKey:'>
+<retval type='B'/>
+</method>
+</class>
+<class name='CAEmitterLayer'>
+<method selector='preservesDepth'>
+<retval type='B'/>
+</method>
+<method selector='setPreservesDepth:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CALayer'>
+<method selector='containsPoint:'>
+<retval type='B'/>
+</method>
+<method selector='contentsAreFlipped'>
+<retval type='B'/>
+</method>
+<method selector='drawsAsynchronously'>
+<retval type='B'/>
+</method>
+<method selector='isDoubleSided'>
+<retval type='B'/>
+</method>
+<method selector='isGeometryFlipped'>
+<retval type='B'/>
+</method>
+<method selector='isHidden'>
+<retval type='B'/>
+</method>
+<method selector='isOpaque'>
+<retval type='B'/>
+</method>
+<method selector='masksToBounds'>
+<retval type='B'/>
+</method>
+<method selector='needsDisplay'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='needsDisplayForKey:'>
+<retval type='B'/>
+</method>
+<method selector='needsDisplayOnBoundsChange'>
+<retval type='B'/>
+</method>
+<method selector='needsLayout'>
+<retval type='B'/>
+</method>
+<method selector='setDoubleSided:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setDrawsAsynchronously:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setGeometryFlipped:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setHidden:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setMasksToBounds:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setNeedsDisplayOnBoundsChange:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setOpaque:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setShouldRasterize:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='shouldArchiveValueForKey:'>
+<retval type='B'/>
+</method>
+<method selector='shouldRasterize'>
+<retval type='B'/>
+</method>
+</class>
+<class name='CAMediaTimingFunction'>
+<method selector='getControlPointAtIndex:values:'>
+<arg type_modifier='o' c_array_of_fixed_length='2' index='1'/>
+</method>
+</class>
+<class name='CAOpenGLLayer'>
+<method selector='canDrawInCGLContext:pixelFormat:forLayerTime:displayTime:'>
+<arg type_modifier='n' index='0'/>
+<arg type_modifier='n' index='1'/>
+<arg type_modifier='n' type='^{_CVTimeStamp=IiqQdq{CVSMPTETime=ssIIIssss}QQ}' index='3'/>
+<retval type='B'/>
+</method>
+<method selector='drawInCGLContext:pixelFormat:forLayerTime:displayTime:'>
+<arg type_modifier='n' index='0'/>
+<arg type_modifier='n' index='1'/>
+<arg type_modifier='n' type='^{_CVTimeStamp=IiqQdq{CVSMPTETime=ssIIIssss}QQ}' index='3'/>
+</method>
+<method selector='isAsynchronous'>
+<retval type='B'/>
+</method>
+<method selector='setAsynchronous:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CAPropertyAnimation'>
+<method selector='isAdditive'>
+<retval type='B'/>
+</method>
+<method selector='isCumulative'>
+<retval type='B'/>
+</method>
+<method selector='setAdditive:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setCumulative:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CARenderer'>
+<method selector='beginFrameAtTime:timeStamp:'>
+<arg type_modifier='n' type='^{_CVTimeStamp=IiqQdq{CVSMPTETime=ssIIIssss}QQ}' index='1'/>
+</method>
+<method class_method='true' selector='rendererWithCGLContext:options:'>
+<arg type='^{_CGLContextObject=}' index='0'/>
+</method>
+</class>
+<class name='CAReplicatorLayer'>
+<method selector='preservesDepth'>
+<retval type='B'/>
+</method>
+<method selector='setPreservesDepth:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CATextLayer'>
+<method selector='isWrapped'>
+<retval type='B'/>
+</method>
+<method selector='setWrapped:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CATransaction'>
+<method class_method='true' selector='disableActions'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='setCompletionBlock:'>
+<arg function_pointer='true' type='@?' index='0'>
+<retval type='v'/>
+</arg>
+</method>
+<method class_method='true' selector='setDisableActions:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='CIFilter'>
+<method selector='isEnabled'>
+<retval type='B'/>
+</method>
+<method selector='setEnabled:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='animationDidStop:finished:'>
+<arg type='B' index='1'/>
+</method>
+<method selector='autoreverses'>
+<retval type='B'/>
+</method>
+<method selector='setAutoreverses:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<informal_protocol name='CAAction'>
+<method type64='v40@0:8@16@24@32' type='v20@0:4@8@12@16' selector='runActionForKey:object:arguments:'/>
+</informal_protocol>
+<informal_protocol name='CAAnimationDelegate'>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='animationDidStart:'/>
+<method type64='v28@0:8@16B24' type='v16@0:4@8B12' selector='animationDidStop:finished:'/>
+</informal_protocol>
+<informal_protocol name='CALayerDelegate'>
+<method type64='@32@0:8@16@24' type='@16@0:4@8@12' selector='actionForLayer:forKey:'/>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='displayLayer:'/>
+<method type64='v32@0:8@16^{CGContext=}24' type='v16@0:4@8^{CGContext=}12' selector='drawLayer:inContext:'/>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='layoutSublayersOfLayer:'/>
+</informal_protocol>
+<informal_protocol name='CALayoutManager'>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='invalidateLayoutOfLayer:'/>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='layoutSublayersOfLayer:'/>
+<method type64='{CGSize=dd}24@0:8@16' type='{CGSize=ff}12@0:4@8' selector='preferredSizeOfLayer:'/>
+</informal_protocol>
+<informal_protocol name='CAMediaTiming'>
+<method type64='B16@0:8' type='B8@0:4' selector='autoreverses'/>
+<method type64='d16@0:8' type='d8@0:4' selector='beginTime'/>
+<method type64='d16@0:8' type='d8@0:4' selector='duration'/>
+<method type64='@16@0:8' type='@8@0:4' selector='fillMode'/>
+<method type64='f16@0:8' type='f8@0:4' selector='repeatCount'/>
+<method type64='d16@0:8' type='d8@0:4' selector='repeatDuration'/>
+<method type64='v20@0:8B16' type='v12@0:4B8' selector='setAutoreverses:'/>
+<method type64='v24@0:8d16' type='v16@0:4d8' selector='setBeginTime:'/>
+<method type64='v24@0:8d16' type='v16@0:4d8' selector='setDuration:'/>
+<method type64='v24@0:8@16' type='v12@0:4@8' selector='setFillMode:'/>
+<method type64='v20@0:8f16' type='v12@0:4f8' selector='setRepeatCount:'/>
+<method type64='v24@0:8d16' type='v16@0:4d8' selector='setRepeatDuration:'/>
+<method type64='v20@0:8f16' type='v12@0:4f8' selector='setSpeed:'/>
+<method type64='v24@0:8d16' type='v16@0:4d8' selector='setTimeOffset:'/>
+<method type64='f16@0:8' type='f8@0:4' selector='speed'/>
+<method type64='d16@0:8' type='d8@0:4' selector='timeOffset'/>
+</informal_protocol>
+</signatures>

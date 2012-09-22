@@ -14,6 +14,8 @@
 		BF273BAB160D4EC60093DA59 /* INTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF273BAA160D4EC60093DA59 /* INTAppDelegate.m */; };
 		BF273BAE160D4EC70093DA59 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF273BAC160D4EC70093DA59 /* MainMenu.xib */; };
 		BF273BB6160D4F530093DA59 /* INTController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF273BB5160D4F530093DA59 /* INTController.m */; };
+		BF273BB8160D503A0093DA59 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF273BB7160D503A0093DA59 /* QTKit.framework */; };
+		BF273BBA160D50760093DA59 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF273BB9160D50760093DA59 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		BF273BAD160D4EC70093DA59 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BF273BB4160D4F530093DA59 /* INTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTController.h; sourceTree = "<group>"; };
 		BF273BB5160D4F530093DA59 /* INTController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTController.m; sourceTree = "<group>"; };
+		BF273BB7160D503A0093DA59 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QTKit.framework; sourceTree = "<group>"; };
+		BF273BB9160D50760093DA59 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QuartzCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF273B98160D4EC60093DA59 /* Cocoa.framework in Frameworks */,
+				BF273BB8160D503A0093DA59 /* QTKit.framework in Frameworks */,
+				BF273BBA160D50760093DA59 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,8 @@
 		BF273B99160D4EC60093DA59 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF273BB9160D50760093DA59 /* QuartzCore.framework */,
+				BF273BB7160D503A0093DA59 /* QTKit.framework */,
 				BF273B9A160D4EC60093DA59 /* AppKit.framework */,
 				BF273B9B160D4EC60093DA59 /* CoreData.framework */,
 				BF273B9C160D4EC60093DA59 /* Foundation.framework */,
@@ -265,6 +273,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Interval/Interval-Prefix.pch";
 				INFOPLIST_FILE = "Interval/Interval-Info.plist";
@@ -277,6 +289,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Interval/Interval-Prefix.pch";
 				INFOPLIST_FILE = "Interval/Interval-Info.plist";
