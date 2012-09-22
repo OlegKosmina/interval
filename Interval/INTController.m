@@ -32,9 +32,11 @@
     
     // movie layers
     QTMovie *movie = [QTMovie movieWithFile: @"/Users/kanaya/Movies/movie1.mov" error: NULL];
+    [movie setAttribute: [NSNumber numberWithBool: YES]
+                 forKey: QTMovieLoopsAttribute];
     
     QTMovieLayer *movieLayer = [QTMovieLayer layerWithMovie: movie];
-    movieLayer.frame = CGRectMake(0, 0, 512, 320);
+    movieLayer.frame = CGRectMake(0, 0, 1280, 200);
     [backgroundLayer addSublayer: movieLayer];
     
     [_view setLayer: backgroundLayer];
