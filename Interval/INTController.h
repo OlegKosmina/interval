@@ -12,4 +12,6 @@
 
 @property (assign) IBOutlet NSView *view;
 
+- (IBAction)sensor1TunrnedOn: (id)sender;
+
 @end

@@ -28,7 +28,7 @@
     NSBitmapImageRep *bitmapImage = [NSBitmapImageRep imageRepWithContentsOfFile: @"/Users/kanaya/Pictures/picture1.jpg"];
     CGImageRef image = [bitmapImage CGImage];
     imageLayer.contents = (__bridge id)image;
-    imageLayer.frame = CGRectMake(0, 0, 256, 160);
+    imageLayer.frame = CGRectMake(0, 0, 320, 200);
     
     // movie layers
     QTMovie *movie = [QTMovie movieWithFile: @"/Users/kanaya/Movies/movie1.mov" error: NULL];
@@ -45,5 +45,8 @@
     [movie play];
 }
 
+- (IBAction)sensor1TunrnedOn: (id)sender {
+    NSLog(@"Sensor 1.");
+}
 
 @end
