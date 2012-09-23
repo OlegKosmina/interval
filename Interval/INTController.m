@@ -9,19 +9,85 @@
 #import <QTKit/QTKit.h>
 #import "INTController.h"
 
-#define N_RABBIT 158
+#define USERNAME        @"kanaya"
+#define PROJECTNAME     @"Interval"
+
+#define RABBIT          @"Rabbit"
+#define N_RABBIT        158
 #define RABBIT_ORIGIN_X 0
 #define RABBIT_ORIGIN_Y 0
 #define RABBIT_WIDTH    320
 #define RABBIT_HEIGHT   200
 
+#define RACOON          @"Racoon"
+#define N_RACOON        61
+#define RACOON_ORIGIN_X 0
+#define RACOON_ORIGIN_Y 0
+#define RACOON_WIDTH    320
+#define RACOON_HEIGHT   200
+
 @implementation INTController
 
-- (void)loadImages {
+- (void)initializeAnimalNameArrayAndAnimalInfoDictionary {
+    animalNameArray = [NSArray arrayWithObjects: RABBIT, RACOON, nil];
+    animalInfoDictionary = [NSMutableDictionary dictionaryWithCapacity: 10];
     // Rabbit
-    rabbitLayers = [NSMutableArray arrayWithCapacity: N_RABBIT];
-    for (int i = 0; i < N_RABBIT; ++i) {
-        NSString *filename = [NSString stringWithFormat: @"/Users/kanaya/Pictures/Interval/Rabbit/%d.png", i + 1];
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: 10]
+                             forKey: RABBIT];
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithInt: N_RABBIT]
+                                                    forKey: @"N"];
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_X]
+                                                    forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_Y]
+                                                    forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_WIDTH]
+                                                    forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_HEIGHT]
+                                                    forKey: @"Height"];
+    // Racoon
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: 10]
+                             forKey: RACOON];
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithInt: N_RACOON]
+                                                    forKey: @"N"];
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_X]
+                                                    forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_Y]
+                                                    forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_WIDTH]
+                                                    forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_HEIGHT]
+                                                    forKey: @"Height"];
+}
+
+- (void)loadImages {
+    for (NSString *animal in animalNameArray) {
+        NSMutableDictionary *info = [animalInfoDictionary objectForKey: animal];
+        int n = [[info objectForKey: @"N"] intValue];
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity: n];
+        for (int i = 0; i < n; ++i) {
+            NSString *filename = [NSString stringWithFormat: @"/Users/%@/Pictures/%@/%@/%d.png", USERNAME, PROJECTNAME, animal, i + 1];
+            NSLog(@"Loading %@", filename);
+            NSBitmapImageRep *bitmapImage = [NSBitmapImageRep imageRepWithContentsOfFile: filename];
+            CGImageRef image = [bitmapImage CGImage];
+            CALayer *layer = [CALayer layer];
+            layer.contents = (__bridge id)image;
+            double originX = [[info objectForKey: @"OriginX"] doubleValue];
+            double originY = [[info objectForKey: @"OriginY"] doubleValue];
+            double width = [[info objectForKey: @"Width"] doubleValue];
+            double height = [[info objectForKey: @"Height"] doubleValue];
+            layer.frame = CGRectMake(originX, originY, width, height);
+            [array addObject: layer];
+        }
+        [animationLayers setObject: array
+                            forKey: animal];
+    }
+#if 0
+    // Rabbit
+    /// rabbitLayers = [NSMutableArray arrayWithCapacity: N_RABBIT];
+    int n_rabbit = [[[animalInfoDictionary objectForKey: RABBIT] objectForKey: @"N"] intValue];
+    rabbitLayers = [NSMutableArray arrayWithCapacity: n_rabbit];
+    for (int i = 0; i < n_rabbit; ++i) {
+        NSString *filename = [NSString stringWithFormat: @"/Users/%@/Pictures/%@/%@/%d.png", USERNAME, PROJECTNAME, RABBIT, i + 1];
         NSLog(@"%@", filename);
         NSBitmapImageRep *bitmapImage = [NSBitmapImageRep imageRepWithContentsOfFile: filename];
         CGImageRef image = [bitmapImage CGImage];
@@ -30,6 +96,7 @@
         layer.frame = CGRectMake(RABBIT_ORIGIN_X, RABBIT_ORIGIN_Y, RABBIT_WIDTH, RABBIT_HEIGHT);
         [rabbitLayers addObject: layer];
     }
+#endif
 }
 
 // worked, ok, but we don't need any more
@@ -59,7 +126,6 @@
 }
 
 - (void)showImageLayers {
-    // should remove all visible layers first (or should hold the current layers and THEN remove?)
     if (currentVisibleImageLayers) {
         for (CALayer *layer in currentVisibleImageLayers) {
             [layer removeFromSuperlayer];
@@ -69,10 +135,10 @@
     currentVisibleImageLayers = nil;
 
     currentVisibleImageLayers = [NSMutableArray arrayWithCapacity: 10];
-    NSNumber *number = [animationStatus objectForKey: @"Rabbit"];
+    NSNumber *number = [animationStatus objectForKey: RABBIT];
     int n = [number intValue];
     if (n > 0) {
-        CALayer *layer = [rabbitLayers objectAtIndex: N_RABBIT - n];  // okay?
+        CALayer *layer = [[animationLayers objectForKey: @"Rabbit"] objectAtIndex: N_RABBIT - n];  // okay?
         [backgroundLayer addSublayer: layer];
         [currentVisibleImageLayers addObject: layer];
     }
@@ -91,6 +157,9 @@
 }
 
 - (void)awakeFromNib {
+    animationLayers = [NSMutableDictionary dictionaryWithCapacity: 10];
+    [self initializeAnimalNameArrayAndAnimalInfoDictionary];
+    
     currentVisibleImageLayers = nil;
     
     [self loadImages];
@@ -138,18 +207,13 @@
 - (IBAction)sensor1TunrnedOn: (id)sender {
     NSLog(@"Sensor 1.");
     [animationStatus setObject: [NSNumber numberWithInt: N_RABBIT]
-                        forKey: @"Rabbit"];
-    
-    /// [self showLayerForAWhile: [rabbitLayers objectAtIndex: 0]];
-    /// CALayer *layer = [[[_view layer] sublayers] objectAtIndex: 1];
-    /// CALayer *layer = imageLayer;
-    /// for (int i = 0; i < N_RABBIT; ++i) {
-        /// CALayer *layer = [rabbitLayers objectAtIndex: i];
-        /// [backgroundLayer addSublayer: layer];
-        /// layer.opacity = 0.5;
-        // wait a second
-        /// [layer removeFromSuperlayer];
-    /// }
+                        forKey: RABBIT];
+}
+
+- (IBAction)sensor2TunrnedOn: (id)sender {
+    NSLog(@"Sensor 2.");
+    [animationStatus setObject: [NSNumber numberWithInt: N_RACOON]
+                        forKey: RACOON];
 }
 
 @end

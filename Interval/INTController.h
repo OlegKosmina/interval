@@ -12,14 +12,19 @@
 @interface INTController: NSObject {
     CALayer *backgroundLayer;
     /// CALayer *imageLayer;
-    NSTimer *timer;
+    NSArray *animalNameArray;
+    NSMutableDictionary *animalInfoDictionary;
     NSMutableDictionary *animationStatus;
-    NSMutableArray *rabbitLayers;
-    NSMutableArray *currentVisibleImageLayers;
+    NSMutableDictionary *animationLayers;
+    NSMutableArray *rabbitLayers;  // to be removed
+    NSMutableArray *currentVisibleImageLayers;  // holds temporary layers
+    NSTimer *timer;
 }
 
 @property (assign) IBOutlet NSView *view;
 
 - (IBAction)sensor1TunrnedOn: (id)sender;
+- (IBAction)sensor2TunrnedOn: (id)sender;
+
 
 @end
