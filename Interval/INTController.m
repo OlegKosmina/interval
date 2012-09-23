@@ -18,8 +18,8 @@
 #define N_ANIMAL                 10
 #define N_PROPERTY               5
 
-#define SCALE_X                  0.5 /* 0.25 */
-#define SCALE_Y                  0.5 /* 0.25 */
+#define SCALE_X                  0.5  /* 0.25 */
+#define SCALE_Y                  0.5  /* 0.25 */
 #define OFFSET_X                 0.0
 #define OFFSET_Y                 0.0
 
