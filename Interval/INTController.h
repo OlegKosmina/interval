@@ -15,6 +15,7 @@
     NSTimer *timer;
     NSMutableDictionary *animationStatus;
     NSMutableArray *rabbitLayers;
+    NSMutableArray *currentVisibleImageLayers;
 }
 
 @property (assign) IBOutlet NSView *view;

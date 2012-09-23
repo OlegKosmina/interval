@@ -9,7 +9,7 @@
 #import <QTKit/QTKit.h>
 #import "INTController.h"
 
-#define N_RABBIT 15 /* 8 */
+#define N_RABBIT 158
 #define RABBIT_ORIGIN_X 0
 #define RABBIT_ORIGIN_Y 0
 #define RABBIT_WIDTH    320
@@ -58,8 +58,29 @@
                         forKey: @"Rabbit"];
 }
 
+- (void)showImageLayers {
+    // should remove all visible layers first (or should hold the current layers and THEN remove?)
+    if (currentVisibleImageLayers) {
+        for (CALayer *layer in currentVisibleImageLayers) {
+            [layer removeFromSuperlayer];
+            /// layer = nil;
+        }
+    }
+    currentVisibleImageLayers = nil;
+
+    currentVisibleImageLayers = [NSMutableArray arrayWithCapacity: 10];
+    NSNumber *number = [animationStatus objectForKey: @"Rabbit"];
+    int n = [number intValue];
+    if (n > 0) {
+        CALayer *layer = [rabbitLayers objectAtIndex: N_RABBIT - n];  // okay?
+        [backgroundLayer addSublayer: layer];
+        [currentVisibleImageLayers addObject: layer];
+    }
+}
+
 - (void)timerFire: (NSTimer *)theTimer {
     [self countDownAnimationTimer];
+    [self showImageLayers];
 }
 
 - (void)initializeAnimationStatus {
@@ -70,6 +91,8 @@
 }
 
 - (void)awakeFromNib {
+    currentVisibleImageLayers = nil;
+    
     [self loadImages];
     [self initializeAnimationStatus];
     
@@ -102,7 +125,7 @@
     [_view setLayer: backgroundLayer];
     [_view setWantsLayer: YES];
 
-    timer = [NSTimer scheduledTimerWithTimeInterval: 0.5
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.2
                                              target: self
                                            selector: @selector(timerFire:)
                                            userInfo: nil
