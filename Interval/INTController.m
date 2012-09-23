@@ -115,14 +115,16 @@
 }
 
 - (void)countDownAnimationTimer {
-    NSNumber *number = [animationStatus objectForKey: @"Rabbit"];
-    int n = [number intValue];
-    if (n > 0) {
-        --n;
+    for (NSString *animal in animalNameArray) {
+        NSNumber *number = [animationStatus objectForKey: animal];
+        int n = [number intValue];
+        if (n > 0) {
+            --n;
+        }
+        // NSLog(@"%@ n == %d", animal, n);
+        [animationStatus setObject: [NSNumber numberWithInt: n]
+                            forKey: animal];
     }
-    NSLog(@"Rabbit n == %d", n);
-    [animationStatus setObject: [NSNumber numberWithInt: n]
-                        forKey: @"Rabbit"];
 }
 
 - (void)showImageLayers {
@@ -135,6 +137,18 @@
     currentVisibleImageLayers = nil;
 
     currentVisibleImageLayers = [NSMutableArray arrayWithCapacity: 10];
+    
+    for (NSString *animal in animalNameArray) {
+        NSNumber *number = [animationStatus objectForKey: animal];
+        int n = [number intValue];
+        int n_animal = [[[animalInfoDictionary objectForKey: animal] objectForKey: @"N"] intValue];
+        if (n > 0) {
+            CALayer *layer = [[animationLayers objectForKey: animal] objectAtIndex: n_animal - n];
+            [backgroundLayer addSublayer: layer];
+            [currentVisibleImageLayers addObject: layer];
+        }
+    }
+#if 0
     NSNumber *number = [animationStatus objectForKey: RABBIT];
     int n = [number intValue];
     if (n > 0) {
@@ -142,6 +156,7 @@
         [backgroundLayer addSublayer: layer];
         [currentVisibleImageLayers addObject: layer];
     }
+#endif
 }
 
 - (void)timerFire: (NSTimer *)theTimer {
@@ -151,9 +166,10 @@
 
 - (void)initializeAnimationStatus {
     animationStatus = [NSMutableDictionary dictionaryWithCapacity: 10];
-    [animationStatus setObject: [NSNumber numberWithInt: 0]
-                        forKey: @"Rabbit"];
-    
+    for (NSString *animal in animalNameArray) {
+        [animationStatus setObject: [NSNumber numberWithInt: 0]
+                            forKey: animal];
+    }
 }
 
 - (void)awakeFromNib {
