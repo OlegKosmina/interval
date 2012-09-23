@@ -9,54 +9,254 @@
 #import <QTKit/QTKit.h>
 #import "INTController.h"
 
-#define USERNAME        @"kanaya"
-#define PROJECTNAME     @"Interval"
+#define USERNAME                 @"kanaya"
+#define PROJECTNAME              @"Interval"
 
-#define RABBIT          @"Rabbit"
-#define N_RABBIT        158
-#define RABBIT_ORIGIN_X 0
-#define RABBIT_ORIGIN_Y 0
-#define RABBIT_WIDTH    320
-#define RABBIT_HEIGHT   200
+#define N_ANIMAL                 10
+#define N_PROPERTY               5
 
-#define RACOON          @"Racoon"
-#define N_RACOON        61
-#define RACOON_ORIGIN_X 0
-#define RACOON_ORIGIN_Y 0
-#define RACOON_WIDTH    320
-#define RACOON_HEIGHT   200
+#define SCALE_X                  0.25
+#define SCALE_Y                  0.25
+#define OFFSET_X                 0.0
+#define OFFSET_Y                 0.0
+
+// D-1
+#define BUTTERFLY                @"Butterfly"
+#define N_BUTTERFLY              84
+#define BUTTERFLY_ORIGIN_X       950
+#define BUTTERFLY_ORIGIN_Y       0
+#define BUTTERFLY_SCALE          1
+#define BUTTERFLY_WIDTH          1280
+#define BUTTERFLY_HEIGHT         931
+
+// B-2
+#define BUTTERFLY_CROWD          @"Butterfly_Crowd"
+#define N_BUTTERFLY_CROWD        87
+#define BUTTERFLY_CROWD_ORIGIN_X 300
+#define BUTTERFLY_CROWD_ORIGIN_Y 0
+#define BUTTERFLY_CROWD_SCALE    0.5
+#define BUTTERFLY_CROWD_WIDTH    1559
+#define BUTTERFLY_CROWD_HEIGHT   1559
+
+// D-2
+#define DEER                     @"Deer"
+#define N_DEER                   77
+#define DEER_ORIGIN_X            1100
+#define DEER_ORIGIN_Y            0
+#define DEER_SCALE               1
+#define DEER_WIDTH               1179
+#define DEER_HEIGHT              680
+
+// D-2
+#define FOX                      @"Fox"
+#define N_FOX                    47
+#define FOX_ORIGIN_X             1000
+#define FOX_ORIGIN_Y             0
+#define FOX_SCALE                1
+#define FOX_WIDTH                1126
+#define FOX_HEIGHT               567
+
+// A-1
+#define MEERKAT                  @"Meerkat"
+#define N_MEERKAT                81
+#define MEERKAT_ORIGIN_X         0
+#define MEERKAT_ORIGIN_Y         0
+#define MEERKAT_SCALE            1
+#define MEERKAT_WIDTH            1701
+#define MEERKAT_HEIGHT           567
+
+// B-2
+#define OWL                      @"Owl"
+#define N_OWL                    64
+#define OWL_ORIGIN_X             300
+#define OWL_ORIGIN_Y             100
+#define OWL_SCALE                0.5
+#define OWL_WIDTH                1417
+#define OWL_HEIGHT               1400
+
+// A-1
+#define RABBIT                   @"Rabbit"
+#define N_RABBIT                 158
+#define RABBIT_ORIGIN_X          0
+#define RABBIT_ORIGIN_Y          0
+#define RABBIT_SCALE             0.5
+#define RABBIT_WIDTH             1548
+#define RABBIT_HEIGHT            879
+
+// A-1
+#define RACOON                   @"Racoon"
+#define N_RACOON                 61
+#define RACOON_ORIGIN_X          0
+#define RACOON_ORIGIN_Y          0
+#define RACOON_SCALE             1
+#define RACOON_WIDTH             1296
+#define RACOON_HEIGHT            800
+
+// A-2
+#define SQUIRREL_LEFT            @"Squirrel_Left"
+#define N_SQUIRREL_LEFT          24
+#define SQUIRREL_LEFT_ORIGIN_X   200
+#define SQUIRREL_LEFT_ORIGIN_Y   100
+#define SQUIRREL_LEFT_SCALE      0.5
+#define SQUIRREL_LEFT_WIDTH      594
+#define SQUIRREL_LEFT_HEIGHT     711
+
+// C-1
+#define SQUIRREL_RIGHT           @"Squirrel_Right"
+#define N_SQUIRREL_RIGHT         23
+#define SQUIRREL_RIGHT_ORIGIN_X  800
+#define SQUIRREL_RIGHT_ORIGIN_Y  100
+#define SQUIRREL_RIGHT_SCALE     0.5
+#define SQUIRREL_RIGHT_WIDTH     696
+#define SQUIRREL_RIGHT_HEIGHT    600
+
+
 
 @implementation INTController
 
 - (void)initializeAnimalNameArrayAndAnimalInfoDictionary {
-    animalNameArray = [NSArray arrayWithObjects: RABBIT, RACOON, nil];
-    animalInfoDictionary = [NSMutableDictionary dictionaryWithCapacity: 10];
+    animalNameArray = [NSArray arrayWithObjects: BUTTERFLY, BUTTERFLY_CROWD, DEER, FOX, MEERKAT, OWL, RABBIT, RACOON, SQUIRREL_LEFT, SQUIRREL_RIGHT, nil];
+    animalInfoDictionary = [NSMutableDictionary dictionaryWithCapacity: N_ANIMAL];
+    
+    // Butterfly
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: BUTTERFLY];
+    [[animalInfoDictionary objectForKey: BUTTERFLY] setObject: [NSNumber numberWithInt: N_BUTTERFLY]
+                                                    forKey: @"N"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY] setObject: [NSNumber numberWithDouble: BUTTERFLY_ORIGIN_X + OFFSET_X]
+                                                    forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY] setObject: [NSNumber numberWithDouble: BUTTERFLY_ORIGIN_Y + OFFSET_Y]
+                                                    forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY] setObject: [NSNumber numberWithDouble: BUTTERFLY_WIDTH * BUTTERFLY_SCALE * SCALE_X]
+                                                    forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY] setObject: [NSNumber numberWithDouble: BUTTERFLY_HEIGHT * BUTTERFLY_SCALE * SCALE_Y]
+                                                    forKey: @"Height"];
+    
+    // Butterfly_Crowd
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: BUTTERFLY_CROWD];
+    [[animalInfoDictionary objectForKey: BUTTERFLY_CROWD] setObject: [NSNumber numberWithInt: N_BUTTERFLY_CROWD]
+                                                       forKey: @"N"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY_CROWD] setObject: [NSNumber numberWithDouble: BUTTERFLY_CROWD_ORIGIN_X + OFFSET_X]
+                                                       forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY_CROWD] setObject: [NSNumber numberWithDouble: BUTTERFLY_CROWD_ORIGIN_Y + OFFSET_Y]
+                                                       forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY_CROWD] setObject: [NSNumber numberWithDouble: BUTTERFLY_CROWD_WIDTH * BUTTERFLY_CROWD_SCALE * SCALE_X]
+                                                       forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: BUTTERFLY_CROWD] setObject: [NSNumber numberWithDouble: BUTTERFLY_CROWD_HEIGHT * BUTTERFLY_CROWD_SCALE * SCALE_Y]
+                                                       forKey: @"Height"];
+
+    // Deer
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: DEER];
+    [[animalInfoDictionary objectForKey: DEER] setObject: [NSNumber numberWithInt: N_DEER]
+                                                       forKey: @"N"];
+    [[animalInfoDictionary objectForKey: DEER] setObject: [NSNumber numberWithDouble: DEER_ORIGIN_X + OFFSET_X]
+                                                       forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: DEER] setObject: [NSNumber numberWithDouble: DEER_ORIGIN_Y + OFFSET_Y]
+                                                       forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: DEER] setObject: [NSNumber numberWithDouble: DEER_WIDTH * DEER_SCALE * SCALE_X]
+                                                       forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: DEER] setObject: [NSNumber numberWithDouble: DEER_HEIGHT * DEER_SCALE * SCALE_Y]
+                                                       forKey: @"Height"];
+
+    // Fox
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: FOX];
+    [[animalInfoDictionary objectForKey: FOX] setObject: [NSNumber numberWithInt: N_FOX]
+                                                  forKey: @"N"];
+    [[animalInfoDictionary objectForKey: FOX] setObject: [NSNumber numberWithDouble: FOX_ORIGIN_X + OFFSET_X]
+                                                  forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: FOX] setObject: [NSNumber numberWithDouble: FOX_ORIGIN_Y + OFFSET_Y]
+                                                  forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: FOX] setObject: [NSNumber numberWithDouble: FOX_WIDTH * FOX_SCALE * SCALE_X]
+                                                  forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: FOX] setObject: [NSNumber numberWithDouble: FOX_HEIGHT * FOX_SCALE * SCALE_Y]
+                                                  forKey: @"Height"];
+
+    // Meerkat
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: MEERKAT];
+    [[animalInfoDictionary objectForKey: MEERKAT] setObject: [NSNumber numberWithInt: N_MEERKAT]
+                                                 forKey: @"N"];
+    [[animalInfoDictionary objectForKey: MEERKAT] setObject: [NSNumber numberWithDouble: MEERKAT_ORIGIN_X + OFFSET_X]
+                                                 forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: MEERKAT] setObject: [NSNumber numberWithDouble: MEERKAT_ORIGIN_Y + OFFSET_Y]
+                                                 forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: MEERKAT] setObject: [NSNumber numberWithDouble: MEERKAT_WIDTH * MEERKAT_SCALE * SCALE_X]
+                                                 forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: MEERKAT] setObject: [NSNumber numberWithDouble: MEERKAT_HEIGHT * MEERKAT_SCALE * SCALE_Y]
+                                                 forKey: @"Height"];
+    
+    // Owl
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: OWL];
+    [[animalInfoDictionary objectForKey: OWL] setObject: [NSNumber numberWithInt: N_OWL]
+                                                 forKey: @"N"];
+    [[animalInfoDictionary objectForKey: OWL] setObject: [NSNumber numberWithDouble: OWL_ORIGIN_X + OFFSET_X]
+                                                 forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: OWL] setObject: [NSNumber numberWithDouble: OWL_ORIGIN_Y + OFFSET_Y]
+                                                 forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: OWL] setObject: [NSNumber numberWithDouble: OWL_WIDTH * OWL_SCALE * SCALE_X]
+                                                 forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: OWL] setObject: [NSNumber numberWithDouble: OWL_HEIGHT * OWL_SCALE * SCALE_Y]
+                                                 forKey: @"Height"];
+    
     // Rabbit
-    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: 10]
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
                              forKey: RABBIT];
     [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithInt: N_RABBIT]
                                                     forKey: @"N"];
-    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_X]
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_X + OFFSET_X]
                                                     forKey: @"OriginX"];
-    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_Y]
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_ORIGIN_Y + OFFSET_Y]
                                                     forKey: @"OriginY"];
-    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_WIDTH]
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_WIDTH * RABBIT_SCALE * SCALE_X]
                                                     forKey: @"Width"];
-    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_HEIGHT]
+    [[animalInfoDictionary objectForKey: RABBIT] setObject: [NSNumber numberWithDouble: RABBIT_HEIGHT * RABBIT_SCALE * SCALE_Y]
                                                     forKey: @"Height"];
+
     // Racoon
-    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: 10]
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
                              forKey: RACOON];
     [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithInt: N_RACOON]
                                                     forKey: @"N"];
-    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_X]
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_X + OFFSET_X]
                                                     forKey: @"OriginX"];
-    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_Y]
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_ORIGIN_Y + OFFSET_Y]
                                                     forKey: @"OriginY"];
-    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_WIDTH]
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_WIDTH * RACOON_SCALE * SCALE_X]
                                                     forKey: @"Width"];
-    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_HEIGHT]
+    [[animalInfoDictionary objectForKey: RACOON] setObject: [NSNumber numberWithDouble: RACOON_HEIGHT * RACOON_SCALE * SCALE_Y]
                                                     forKey: @"Height"];
+
+    // Squirrel_Left
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: SQUIRREL_LEFT];
+    [[animalInfoDictionary objectForKey: SQUIRREL_LEFT] setObject: [NSNumber numberWithInt: N_SQUIRREL_LEFT]
+                                                    forKey: @"N"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_LEFT] setObject: [NSNumber numberWithDouble: SQUIRREL_LEFT_ORIGIN_X + OFFSET_X]
+                                                    forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_LEFT] setObject: [NSNumber numberWithDouble: SQUIRREL_LEFT_ORIGIN_Y + OFFSET_Y]
+                                                    forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_LEFT] setObject: [NSNumber numberWithDouble: SQUIRREL_LEFT_WIDTH * SQUIRREL_LEFT_SCALE * SCALE_X]
+                                                    forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_LEFT] setObject: [NSNumber numberWithDouble: SQUIRREL_LEFT_HEIGHT * SQUIRREL_LEFT_SCALE * SCALE_Y]
+                                                    forKey: @"Height"];
+
+    // Squirrel_Right
+    [animalInfoDictionary setObject: [NSMutableDictionary dictionaryWithCapacity: N_PROPERTY]
+                             forKey: SQUIRREL_RIGHT];
+    [[animalInfoDictionary objectForKey: SQUIRREL_RIGHT] setObject: [NSNumber numberWithInt: N_SQUIRREL_RIGHT]
+                                                           forKey: @"N"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_RIGHT] setObject: [NSNumber numberWithDouble: SQUIRREL_RIGHT_ORIGIN_X + OFFSET_X]
+                                                           forKey: @"OriginX"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_RIGHT] setObject: [NSNumber numberWithDouble: SQUIRREL_RIGHT_ORIGIN_Y + OFFSET_Y]
+                                                           forKey: @"OriginY"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_RIGHT] setObject: [NSNumber numberWithDouble: SQUIRREL_RIGHT_WIDTH * SQUIRREL_RIGHT_SCALE * SCALE_X]
+                                                           forKey: @"Width"];
+    [[animalInfoDictionary objectForKey: SQUIRREL_RIGHT] setObject: [NSNumber numberWithDouble: SQUIRREL_RIGHT_HEIGHT * SQUIRREL_RIGHT_SCALE * SCALE_Y]
+                                                           forKey: @"Height"];
 }
 
 - (void)loadImages {
@@ -222,14 +422,68 @@
 
 - (IBAction)sensor1TunrnedOn: (id)sender {
     NSLog(@"Sensor 1.");
-    [animationStatus setObject: [NSNumber numberWithInt: N_RABBIT]
-                        forKey: RABBIT];
+    // MEERKAT, RABBIT, RACOON
+    int n1 = [[animationStatus objectForKey: MEERKAT] intValue];
+    int n2 = [[animationStatus objectForKey: RABBIT] intValue];
+    int n3 = [[animationStatus objectForKey: RACOON] intValue];
+    if (n1 == 0 && n2 == 0 && n3 == 0) {
+        // should randomly choose one of MEERKAT, RABBIT, RACOON
+        [animationStatus setObject: [NSNumber numberWithInt: N_RABBIT]
+                            forKey: RABBIT];
+    }
 }
 
 - (IBAction)sensor2TunrnedOn: (id)sender {
     NSLog(@"Sensor 2.");
-    [animationStatus setObject: [NSNumber numberWithInt: N_RACOON]
-                        forKey: RACOON];
+    // SQUIRREL_LEFT
+    int n = [[animationStatus objectForKey: SQUIRREL_LEFT] intValue];
+    if (n == 0) {
+        [animationStatus setObject: [NSNumber numberWithInt: N_SQUIRREL_LEFT]
+                            forKey: SQUIRREL_LEFT];
+    }
 }
+
+- (IBAction)sensor3TunrnedOn: (id)sender {
+    NSLog(@"Sensor 3.");
+    // BUTTERFLY_CROWD or OWL
+    int n1 = [[animationStatus objectForKey: BUTTERFLY_CROWD] intValue];
+    int n2 = [[animationStatus objectForKey: OWL] intValue];
+    if (n1 == 0 && n2 == 0) {
+        [animationStatus setObject: [NSNumber numberWithInt: N_OWL]
+                            forKey: OWL];
+    }
+}
+
+- (IBAction)sensor4TunrnedOn: (id)sender {
+    NSLog(@"Sensor 4.");
+    // SQUIRREL_RIGHT
+    int n = [[animationStatus objectForKey: SQUIRREL_RIGHT] intValue];
+    if (n == 0) {
+        [animationStatus setObject: [NSNumber numberWithInt: N_SQUIRREL_RIGHT]
+                            forKey: SQUIRREL_RIGHT];
+    }
+}
+
+- (IBAction)sensor5TunrnedOn: (id)sender {
+    NSLog(@"Sensor 5.");
+    // BUTTERFLY
+    int n = [[animationStatus objectForKey: BUTTERFLY] intValue];
+    if (n == 0) {
+        [animationStatus setObject: [NSNumber numberWithInt: N_BUTTERFLY]
+                            forKey: BUTTERFLY];
+    }
+}
+
+- (IBAction)sensor6TunrnedOn: (id)sender {
+    NSLog(@"Sensor 6.");
+    // DEER or FOX
+    int n1 = [[animationStatus objectForKey: DEER] intValue];
+    int n2 = [[animationStatus objectForKey: FOX] intValue];
+    if (n1 == 0 && n2 == 0) {
+    [animationStatus setObject: [NSNumber numberWithInt: N_FOX]
+                        forKey: FOX];
+    }
+}
+
 
 @end

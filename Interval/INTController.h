@@ -25,6 +25,9 @@
 
 - (IBAction)sensor1TunrnedOn: (id)sender;
 - (IBAction)sensor2TunrnedOn: (id)sender;
-
+- (IBAction)sensor3TunrnedOn: (id)sender;
+- (IBAction)sensor4TunrnedOn: (id)sender;
+- (IBAction)sensor5TunrnedOn: (id)sender;
+- (IBAction)sensor6TunrnedOn: (id)sender;
 
 @end

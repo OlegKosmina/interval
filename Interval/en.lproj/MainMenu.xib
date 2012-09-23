@@ -2195,6 +2195,38 @@
 					</object>
 					<int key="connectionID">575</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sensor3TunrnedOn:</string>
+						<reference key="source" ref="322017545"/>
+						<reference key="destination" ref="557531625"/>
+					</object>
+					<int key="connectionID">576</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sensor5TunrnedOn:</string>
+						<reference key="source" ref="322017545"/>
+						<reference key="destination" ref="694289856"/>
+					</object>
+					<int key="connectionID">577</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sensor4TunrnedOn:</string>
+						<reference key="source" ref="322017545"/>
+						<reference key="destination" ref="388036691"/>
+					</object>
+					<int key="connectionID">578</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sensor6TunrnedOn:</string>
+						<reference key="source" ref="322017545"/>
+						<reference key="destination" ref="660231332"/>
+					</object>
+					<int key="connectionID">579</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -3844,7 +3876,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">575</int>
+			<int key="maxID">579</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3873,6 +3905,10 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="sensor1TunrnedOn:">id</string>
 						<string key="sensor2TunrnedOn:">id</string>
+						<string key="sensor3TunrnedOn:">id</string>
+						<string key="sensor4TunrnedOn:">id</string>
+						<string key="sensor5TunrnedOn:">id</string>
+						<string key="sensor6TunrnedOn:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="sensor1TunrnedOn:">
@@ -3881,6 +3917,22 @@
 						</object>
 						<object class="IBActionInfo" key="sensor2TunrnedOn:">
 							<string key="name">sensor2TunrnedOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sensor3TunrnedOn:">
+							<string key="name">sensor3TunrnedOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sensor4TunrnedOn:">
+							<string key="name">sensor4TunrnedOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sensor5TunrnedOn:">
+							<string key="name">sensor5TunrnedOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sensor6TunrnedOn:">
+							<string key="name">sensor6TunrnedOn:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
