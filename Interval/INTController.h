@@ -11,7 +11,10 @@
 
 @interface INTController: NSObject {
     CALayer *backgroundLayer;
-    CALayer *imageLayer;
+    /// CALayer *imageLayer;
+    NSTimer *timer;
+    NSMutableDictionary *animationStatus;
+    NSMutableArray *rabbitLayers;
 }
 
 @property (assign) IBOutlet NSView *view;
