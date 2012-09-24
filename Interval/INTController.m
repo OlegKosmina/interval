@@ -12,14 +12,14 @@
 #define USERNAME                 @"kanaya"
 #define PROJECTNAME              @"Interval"
 
-#define VIEW_WIDTH               2560
-#define VIEW_HEIGHT              400
+#define VIEW_WIDTH               5120
+#define VIEW_HEIGHT              800
 
 #define N_ANIMAL                 10
 #define N_PROPERTY               5
 
-#define SCALE_X                  0.5  /* 0.25 */
-#define SCALE_Y                  0.5  /* 0.25 */
+#define SCALE_X                  1.0 /* 0.5 */ /* 0.25 */
+#define SCALE_Y                  1.0 /* 0.5 */ /* 0.25 */
 #define OFFSET_X                 0.0
 #define OFFSET_Y                 0.0
 

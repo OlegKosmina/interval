@@ -1295,13 +1295,12 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">259</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{-3200, 282}, {2560, 461}}</string>
+				<string key="NSWindowRect">{{-3200, 282}, {5120, 861}}</string>
 				<int key="NSWTFlags">1954022400</int>
 				<string key="NSWindowTitle">Interval</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{2560, 461}</string>
 				<string key="NSWindowContentMinSize">{2560, 461}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
@@ -1310,7 +1309,7 @@
 						<object class="NSCustomView" id="948416381">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{0, 61}, {2560, 400}}</string>
+							<string key="NSFrame">{{0, 61}, {5120, 800}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="316718116"/>
@@ -1478,14 +1477,14 @@
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 					</array>
-					<string key="NSFrameSize">{2560, 461}</string>
+					<string key="NSFrameSize">{5120, 861}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="948416381"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1200}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{2560, 483}</string>
-				<string key="NSMaxSize">{2560, 483}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -2761,13 +2760,13 @@
 						<int key="objectID">372</int>
 						<reference key="object" ref="439893737"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="948416381"/>
 							<reference ref="316718116"/>
 							<reference ref="46030825"/>
 							<reference ref="557531625"/>
 							<reference ref="388036691"/>
 							<reference ref="694289856"/>
 							<reference ref="660231332"/>
+							<reference ref="948416381"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
